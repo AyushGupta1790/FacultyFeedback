@@ -1,0 +1,201 @@
+-- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
+--
+-- Host: localhost    Database: facultyfeedback
+-- ------------------------------------------------------
+-- Server version	8.0.33
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `fac_feed_ans`
+--
+
+DROP TABLE IF EXISTS `fac_feed_ans`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `fac_feed_ans` (
+  `course` varchar(50) NOT NULL,
+  `sem` varchar(45) DEFAULT NULL,
+  `faculty` varchar(45) DEFAULT NULL,
+  `que1` int DEFAULT NULL,
+  `que2` int DEFAULT NULL,
+  `que3` int DEFAULT NULL,
+  `que4` int DEFAULT NULL,
+  `que5` int DEFAULT NULL,
+  `que6` int DEFAULT NULL,
+  `que7` int DEFAULT NULL,
+  `que8` int DEFAULT NULL,
+  `que9` int DEFAULT NULL,
+  `que10` int DEFAULT NULL,
+  `que11` int DEFAULT NULL,
+  `que12` int DEFAULT NULL,
+  `que13` int DEFAULT NULL,
+  `que14` int DEFAULT NULL,
+  `que15` int DEFAULT NULL,
+  `date` varchar(45) DEFAULT NULL,
+  `subject` varchar(45) DEFAULT NULL,
+  `remarks` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='			';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `fac_feed_ans`
+--
+
+LOCK TABLES `fac_feed_ans` WRITE;
+/*!40000 ALTER TABLE `fac_feed_ans` DISABLE KEYS */;
+INSERT INTO `fac_feed_ans` VALUES ('B.tech','8','XYZ',4,3,1,2,3,2,2,3,3,3,2,3,3,2,5,'Fri May 26 23:56:27 IST 2023','PME',NULL);
+/*!40000 ALTER TABLE `fac_feed_ans` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `faculty_info`
+--
+
+DROP TABLE IF EXISTS `faculty_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `faculty_info` (
+  `faculty_id` int DEFAULT NULL,
+  `faculty_name` varchar(45) DEFAULT NULL,
+  `course` varchar(45) DEFAULT NULL,
+  `department` varchar(45) DEFAULT NULL,
+  `specialization` varchar(45) DEFAULT NULL,
+  `user_id` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `faculty_info`
+--
+
+LOCK TABLES `faculty_info` WRITE;
+/*!40000 ALTER TABLE `faculty_info` DISABLE KEYS */;
+INSERT INTO `faculty_info` VALUES (1,'XYZ','B.tech','CSE','daa','1'),(2,'ABC','B.tech','CSE','DAA','2'),(3,'BDE','B.tech','ECE','XYZ','3'),(4,'PQR','B.tech','EE','XYZ','4');
+/*!40000 ALTER TABLE `faculty_info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `login`
+--
+
+DROP TABLE IF EXISTS `login`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `login` (
+  `User` varchar(50) DEFAULT NULL,
+  `Pswd` varchar(45) DEFAULT NULL,
+  `Type` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `login`
+--
+
+LOCK TABLES `login` WRITE;
+/*!40000 ALTER TABLE `login` DISABLE KEYS */;
+INSERT INTO `login` VALUES ('Ayush','1790','admin'),('1','1234','Student'),('Durgesh','1234','Student'),('1','1234','Student'),('1','1234','Faculty'),('2','1234','Student'),('3','1234','Student'),('4','1234','Student'),('5','1234','Student'),('2','1234','Faculty'),('3','1234','Faculty'),('4','1234','Faculty');
+/*!40000 ALTER TABLE `login` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `student_info`
+--
+
+DROP TABLE IF EXISTS `student_info`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `student_info` (
+  `course` varchar(50) NOT NULL,
+  `semester` varchar(45) DEFAULT NULL,
+  `dapartment` varchar(45) DEFAULT NULL,
+  `user_id` int DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `student_info`
+--
+
+LOCK TABLES `student_info` WRITE;
+/*!40000 ALTER TABLE `student_info` DISABLE KEYS */;
+INSERT INTO `student_info` VALUES ('B.tech','8','CSE',1,'Durgesh'),('B.tech','8','CSE',2,'Shreyansh'),('B.tech','8','CSE',3,'Himanshu'),('B.tech','8','CSE',4,'Uttam'),('B.tech','8','CSE',5,'Anuj');
+/*!40000 ALTER TABLE `student_info` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `subject_allotment`
+--
+
+DROP TABLE IF EXISTS `subject_allotment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `subject_allotment` (
+  `subject_id` varchar(50) DEFAULT NULL,
+  `faculty_id` varchar(50) DEFAULT NULL,
+  `faculty_name` varchar(45) DEFAULT NULL,
+  `subject_name` varchar(45) DEFAULT NULL,
+  `course` varchar(45) DEFAULT NULL,
+  `specialization` varchar(45) DEFAULT NULL,
+  `sem` varchar(45) DEFAULT NULL,
+  `performance` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `subject_allotment`
+--
+
+LOCK TABLES `subject_allotment` WRITE;
+/*!40000 ALTER TABLE `subject_allotment` DISABLE KEYS */;
+INSERT INTO `subject_allotment` VALUES ('khu-801','1','XYZ','PME','B.tech','daa','8','');
+/*!40000 ALTER TABLE `subject_allotment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `subject_regist`
+--
+
+DROP TABLE IF EXISTS `subject_regist`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `subject_regist` (
+  `sub_id` varchar(50) DEFAULT NULL,
+  `course` varchar(45) DEFAULT NULL,
+  `sem` varchar(45) DEFAULT NULL,
+  `branch` varchar(45) DEFAULT NULL,
+  `sub_name` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `subject_regist`
+--
+
+LOCK TABLES `subject_regist` WRITE;
+/*!40000 ALTER TABLE `subject_regist` DISABLE KEYS */;
+INSERT INTO `subject_regist` VALUES ('khu-801','B.tech','8','CSE','PME'),('koe-091','Rural Development','B.tech','7','CSE'),('kcs-801','cryptography','B.tech','8','CSE'),('ksc-802','Renewal energy and resources','B.tech','8','CSE');
+/*!40000 ALTER TABLE `subject_regist` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-08-08 11:42:52
